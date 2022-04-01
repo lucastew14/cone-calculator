@@ -1,0 +1,41 @@
+import java.util.Scanner;
+/**
+ * calculates the total and lateral surface areas
+ * as well as volume using raidus and height
+ * @author Lucas Tewolde
+ * @version 2021-26-09
+ */
+public class ConeCalculator {
+    //definition for method
+    public static void coneCalc() {
+        System.out.println("Welcome to Cone Calculator!");
+        Scanner sc = new Scanner(System.in);
+        double radius;
+        double height;
+        // Prompt the user for an input
+        System.out.print("Enter radius of the cone: ");
+        radius = sc.nextDouble();
+        if (radius <= 0) {
+            System.out.println("Error:The radius and height must both be greater than 0");
+        }
+        // Prompt the user for an input
+        System.out.print("Enter height of the cone: ");
+        height = sc.nextDouble();
+        if (height <= 0) {
+            System.out.println("Error:The radius and height must both be greater than 0");
+        }
+        //calculate slate height
+        double slate = Math.sqrt(Math.pow(radius, 2) + Math.pow(height, 2));
+        //calculate lateral surface area
+        double lateralSA = Math.PI * radius * slate;
+        //calculate total surface area
+        double totalSA = Math.PI * radius * (radius + slate);
+        // calculate volume
+        double volume = Math.PI * Math.pow(radius, 2) * height / 3;
+        //displays outputs
+        System.out.printf("Lateral Surface Area of cone is:%.4f%n", lateralSA);
+        System.out.printf("Total Surface Area of cone is: %.3f%n", totalSA);
+        System.out.printf("Volume of cone is:%.2f%n ", volume);
+    }
+   
+}
